@@ -23,7 +23,16 @@ import { getScream, clearErrors } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
+  },
+  invisibleSeparator: {
+    border: "none",
+    margin: 4,
+  },
+  visibleSeparator: {
+    width: "100%",
+    borderBottom: "1px solid rgba(0,0,0,0.1)",
+    marginBottom: 20,
   },
   profileImage: {
     maxWidth: 200,
@@ -138,7 +147,7 @@ class ScreamDialog extends Component {
           tip="Comment"
           tipClassName={classes.expandButton}
         >
-          <SendIcon color="primary" position="absolute"/>
+          <SendIcon color="primary" position="absolute" />
         </MyButton>
         <Dialog
           open={this.state.open}

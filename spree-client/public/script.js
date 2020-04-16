@@ -23,3 +23,20 @@ if (window.location.protocol === 'http:') {
   link.href = window.location.href.replace('http://', 'https://');
   requireHTTPS.classList.remove('hidden');
 }
+
+Notification.requestPermission((result) => {
+  if (result === "granted") {
+    showNotification("Spree Spree!", "Hey there!");
+  }
+});
+
+function showNotification(title, message) {
+  if ("Notification" in window) {
+    navigator.serviceWorker.ready.then((registration) => {
+      registration.showNotification(title, {
+        body: message,
+        tag: "vibration-sample",
+      });
+    });
+  }
+}

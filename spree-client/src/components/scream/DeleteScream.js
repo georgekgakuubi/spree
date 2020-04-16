@@ -1,32 +1,41 @@
-import React, { Component, Fragment } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import MyButton from '../../util/MyButton';
+import React, { Component, Fragment } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
+import MyButton from "../../util/MyButton";
 
 // MUI Stuff
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import DialogActions from '@material-ui/core/DialogActions';
-import DeleteOutline from '@material-ui/icons/DeleteOutline';
+import Button from "@material-ui/core/Button";
+import Dialog from "@material-ui/core/Dialog";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogActions from "@material-ui/core/DialogActions";
+import DeleteOutline from "@material-ui/icons/DeleteOutline";
 
-import { connect } from 'react-redux';
-import { deleteScream } from '../../redux/actions/dataActions';
+import { connect } from "react-redux";
+import { deleteScream } from "../../redux/actions/dataActions";
 
 const styles = {
   deleteButton: {
-    position: 'absolute',
-    left: '91%',
-    top: '0%'
+    position: "absolute",
+    left: "91%",
+    top: "0%",
   },
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
+  },
+  invisibleSeparator: {
+    border: "none",
+    margin: 4,
+  },
+  visibleSeparator: {
+    width: "100%",
+    borderBottom: "1px solid rgba(0,0,0,0.1)",
+    marginBottom: 20,
   },
 };
 
 class DeleteScream extends Component {
   state = {
-    open: false
+    open: false,
   };
   handleOpen = () => {
     this.setState({ open: true });
@@ -76,10 +85,9 @@ class DeleteScream extends Component {
 DeleteScream.propTypes = {
   deleteScream: PropTypes.func.isRequired,
   classes: PropTypes.object.isRequired,
-  screamId: PropTypes.string.isRequired
+  screamId: PropTypes.string.isRequired,
 };
 
-export default connect(
-  null,
-  { deleteScream }
-)(withStyles(styles)(DeleteScream));
+export default connect(null, { deleteScream })(
+  withStyles(styles)(DeleteScream)
+);
