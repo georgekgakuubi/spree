@@ -25,7 +25,7 @@ class Navbar extends Component {
           {authenticated ? (
             <Fragment>
               <MyButton tip="Refresh">
-                <RefreshIcon
+                <RefreshIcon color ="secondary"
                   onClick={() => window.location.reload(false)}
                   style={{ fontSize: "30" }}
                 ></RefreshIcon>

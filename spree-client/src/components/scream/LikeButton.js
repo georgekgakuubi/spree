@@ -31,7 +31,7 @@ export class LikeButton extends Component {
     const likeButton = !authenticated ? (
       <Link to="/login">
         <MyButton tip="Like">
-          <FavoriteBorder color="inherit" />
+          <FavoriteBorder color="secondary" />
         </MyButton>
       </Link>
     ) : this.likedScream() ? (
