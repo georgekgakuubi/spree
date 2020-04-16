@@ -133,6 +133,26 @@ import {
       });
   };
   
+   // Post a Image
+   export const postimage = (newScream) => (dispatch) => {
+    dispatch({ type: LOADING_UI });
+    axios
+      .post('/scream', newScream)
+      .then((res) => {
+        dispatch({
+          type: POST_SCREAM,
+          payload: res.data
+        });
+        dispatch(clearErrors());
+      })
+      .catch((err) => {
+        dispatch({
+          type: SET_ERRORS,
+          payload: err.response.data
+        });
+      });
+   };
+  
   export const clearErrors = () => (dispatch) => {
     dispatch({ type: CLEAR_ERRORS });
   };

@@ -4,6 +4,7 @@ import "./App.css";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import jwtDecode from "jwt-decode";
+import NetworkDetector from './Hoc/NetworkDetector';
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -66,4 +67,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default NetworkDetector(App);

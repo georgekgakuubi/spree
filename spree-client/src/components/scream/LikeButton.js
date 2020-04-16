@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import MyButton from '../../util/MyButton';
-import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import MyButton from "../../util/MyButton";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 // Icons
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
 // REdux
-import { connect } from 'react-redux';
-import { likeScream, unlikeScream } from '../../redux/actions/dataActions';
+import { connect } from "react-redux";
+import { likeScream, unlikeScream } from "../../redux/actions/dataActions";
 
 export class LikeButton extends Component {
   likedScream = () => {
@@ -31,16 +31,16 @@ export class LikeButton extends Component {
     const likeButton = !authenticated ? (
       <Link to="/login">
         <MyButton tip="Like">
-          <FavoriteBorder color="primary" />
+          <FavoriteBorder color="inherit" />
         </MyButton>
       </Link>
     ) : this.likedScream() ? (
       <MyButton tip="Undo like" onClick={this.unlikeScream}>
-        <FavoriteIcon color="primary" />
+        <FavoriteIcon color="secondary" />
       </MyButton>
     ) : (
       <MyButton tip="Like" onClick={this.likeScream}>
-        <FavoriteBorder color="primary" />
+        <FavoriteBorder color="secondary" />
       </MyButton>
     );
     return likeButton;
@@ -51,19 +51,16 @@ LikeButton.propTypes = {
   user: PropTypes.object.isRequired,
   screamId: PropTypes.string.isRequired,
   likeScream: PropTypes.func.isRequired,
-  unlikeScream: PropTypes.func.isRequired
+  unlikeScream: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  user: state.user
+  user: state.user,
 });
 
 const mapActionsToProps = {
   likeScream,
-  unlikeScream
+  unlikeScream,
 };
 
-export default connect(
-  mapStateToProps,
-  mapActionsToProps
-)(LikeButton);
+export default connect(mapStateToProps, mapActionsToProps)(LikeButton);

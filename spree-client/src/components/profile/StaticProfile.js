@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 // Icons
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
-import CalendarToday from "@material-ui/icons/CalendarToday";
+import TodayIcon from "@material-ui/icons/Today";
 
 const styles = (theme) => ({
   button: {
@@ -109,7 +109,7 @@ const StaticProfile = (props) => {
               <hr />
             </Fragment>
           )}
-          <CalendarToday color="primary" />{" "}
+          <TodayIcon color="primary" />{" "}
           <span> 👉 {dayjs(createdAt).format("DD MMM YYYY")}</span>
         </div>
       </div>

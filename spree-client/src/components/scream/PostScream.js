@@ -11,6 +11,8 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import PostAddIcon from "@material-ui/icons/PostAdd";
 import CancelIcon from "@material-ui/icons/Cancel";
+import ContactlessIcon from '@material-ui/icons/Contactless';
+import LinkedCameraIcon from '@material-ui/icons/LinkedCamera';
 // Redux stuff
 import { connect } from "react-redux";
 import { postScream, clearErrors } from "../../redux/actions/dataActions";
@@ -26,12 +28,13 @@ const styles = (theme) => ({
   visibleSeparator: {
     width: '100%',
     borderBottom: '1px solid rgba(0,0,0,0.1)',
-    marginBottom: 20
+    marginBottom: 20,
   },
   submitButton: {
     position: "relative",
     float: "right",
     marginTop: 10,
+    marginLeft:20,
   },
   progressSpinner: {
     position: "absolute",
@@ -82,7 +85,7 @@ class PostScream extends Component {
     return (
       <Fragment>
         <MyButton onClick={this.handleOpen} tip="Post a Scream!">
-          <PostAddIcon style={{ fontSize: "28" }} />
+          <PostAddIcon style={{ fontSize: "35" }} />
         </MyButton>
         <Dialog
           open={this.state.open}
@@ -116,11 +119,29 @@ class PostScream extends Component {
               <Button
                 type="submit"
                 variant="contained"
-                color="primary"
+                color="secondary"
+                margin="auto"
                 className={classes.submitButton}
                 disabled={loading}
               >
-                Post
+                <LinkedCameraIcon></LinkedCameraIcon>
+                {loading && (
+                  <CircularProgress
+                    size={30}
+                    className={classes.progressSpinner}
+                  />
+                )}
+              </Button>
+
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                margin="auto"
+                className={classes.submitButton}
+                disabled={loading}
+              >
+                <ContactlessIcon></ContactlessIcon>
                 {loading && (
                   <CircularProgress
                     size={30}

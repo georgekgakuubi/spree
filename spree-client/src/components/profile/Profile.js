@@ -14,7 +14,7 @@ import Paper from "@material-ui/core/Paper";
 // Icons
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
-import CalendarToday from "@material-ui/icons/CalendarToday";
+import TodayIcon from "@material-ui/icons/Today";
 import AddAPhotoIcon from "@material-ui/icons/AddAPhoto";
 import MeetingRoomIcon from "@material-ui/icons/MeetingRoom";
 //Redux
@@ -23,15 +23,16 @@ import { logoutUser, uploadImage } from "../../redux/actions/userActions";
 
 const styles = (theme) => ({
   button: {
-    float: "right",
+    position: "relative",
   },
   paper: {
-    padding: 20
+    padding: 20,
   },
   image: {
     margin: "20px auto 20px auto",
   },
   profile: {
+    position: "sticky",
     borderRadius: "30px",
     padding: "auto",
     margin: "auto",
@@ -127,7 +128,7 @@ class Profile extends Component {
                 component={Link}
                 to={`/users/${handle}`}
                 color="primary"
-                variant="h5"
+                variant="h6"
               >
                 @{handle}
               </MuiLink>
@@ -150,11 +151,15 @@ class Profile extends Component {
                   <hr />
                 </Fragment>
               )}
-              <CalendarToday color="primary" />{" "}
+              <TodayIcon color="primary" />{" "}
               <span> {dayjs(createdAt).format("DD, MMM YYYY")}</span>
             </div>
-            <MyButton tip="Logout" onClick={this.handleLogout}>
-              <MeetingRoomIcon color="primary" size="25" />
+            <MyButton
+              btnClassName="button"
+              tip="Logout"
+              onClick={this.handleLogout}
+            >
+              <MeetingRoomIcon color="secondary" size="40" />
             </MyButton>
             <EditDetails />
           </div>

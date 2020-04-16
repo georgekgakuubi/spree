@@ -13,7 +13,7 @@ import Badge from '@material-ui/core/Badge';
 // Icons
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ChatIcon from '@material-ui/icons/Chat';
+import ReplyAllIcon from '@material-ui/icons/ReplyAll';
 // Redux
 import { connect } from 'react-redux';
 import { markNotificationsRead } from '../../redux/actions/userActions';
@@ -60,14 +60,14 @@ class Notifications extends Component {
     let notificationsMarkup =
       notifications && notifications.length > 0 ? (
         notifications.map((not) => {
-          const verb = not.type === 'like' ? 'liked' : 'commented on';
+          const verb = not.type === 'like' ? 'liked' : 'vibed on';
           const time = dayjs(not.createdAt).fromNow();
-          const iconColor = not.read ? 'primary' : 'secondary';
+          const iconColor = not.read ? 'inherit' : 'secondary';
           const icon =
             not.type === 'like' ? (
               <FavoriteIcon color={iconColor} style={{ marginRight: 10 }} />
             ) : (
-              <ChatIcon color={iconColor} style={{ marginRight: 10 }} />
+              <ReplyAllIcon color={iconColor} style={{ marginRight: 10 }} />
             );
 
           return (
