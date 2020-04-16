@@ -22,6 +22,9 @@ import { connect } from "react-redux";
 import { getScream, clearErrors } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
+  typography: {
+    useNextVariants: true
+  },
   profileImage: {
     maxWidth: 200,
     height: 200,

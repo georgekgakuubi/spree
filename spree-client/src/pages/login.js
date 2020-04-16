@@ -1,44 +1,60 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import AppIcon from '../images/icon.png';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
+import AppIcon from "../images/icon.png";
+import { Link } from "react-router-dom";
 
 // MUI Stuff
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import LockOpenIcon from '@material-ui/icons/LockOpen';
-import BorderColorIcon from '@material-ui/icons/BorderColor';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
+import BorderColorIcon from "@material-ui/icons/BorderColor";
 // Redux stuff
-import { connect } from 'react-redux';
-import { loginUser } from '../redux/actions/userActions';
+import { connect } from "react-redux";
+import { loginUser } from "../redux/actions/userActions";
 
 const styles = (theme) => ({
+  typography: {
+    useNextVariants: true,
+  },
   form: {
-    textAlign: 'center'
+    textAlign: "center",
   },
   pageTitle: {
-    margin: '10px auto 10px auto'
+    margin: "10px auto 10px auto",
   },
   textField: {
-    margin: '10px auto 10px auto'
+    margin: "10px auto 10px auto",
   },
   button: {
     marginTop: 10,
-    position: 'relative'
+    position: "relative",
+  },
+  customError: {
+    color: "red",
+    fontSize: "0.8rem",
+    marginTop: 10,
+  },
+  progress: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    marginTop: -12,
+    marginLeft: -12,
   },
 });
 
 class login extends Component {
-  constructor() {     // control component ...can use react dev tool
+  constructor() {
+    // control component ...can use react dev tool
     super();
     this.state = {
-      email: '',
-      password: '',
-      errors: {}
+      email: "",
+      password: "",
+      errors: {},
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -50,19 +66,19 @@ class login extends Component {
     event.preventDefault();
     const userData = {
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     };
     this.props.loginUser(userData, this.props.history);
   };
   handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
   render() {
     const {
       classes,
-      UI: { loading }
+      UI: { loading },
     } = this.props;
     const { errors } = this.state;
 
@@ -120,7 +136,10 @@ class login extends Component {
             </Button>
             <br />
             <small>
-              don't have an account ? sign up <Link to="/signup"><BorderColorIcon></BorderColorIcon></Link>
+              don't have an account ? sign up{" "}
+              <Link to="/signup">
+                <BorderColorIcon></BorderColorIcon>
+              </Link>
             </small>
           </form>
         </Grid>
@@ -134,16 +153,16 @@ login.propTypes = {
   classes: PropTypes.object.isRequired,
   loginUser: PropTypes.func.isRequired,
   user: PropTypes.object.isRequired,
-  UI: PropTypes.object.isRequired
+  UI: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  UI: state.UI
+  UI: state.UI,
 });
 
 const mapActionsToProps = {
-  loginUser
+  loginUser,
 };
 
 export default connect(

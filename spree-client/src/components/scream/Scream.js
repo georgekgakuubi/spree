@@ -19,6 +19,9 @@ import ChatIcon from '@material-ui/icons/Chat';
 import { connect } from 'react-redux';
 
 const styles = {
+  typography: {
+    useNextVariants: true
+  },
   card: {
     position: 'relative',
     size:'auto',

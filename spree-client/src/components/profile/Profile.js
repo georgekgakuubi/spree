@@ -26,10 +26,8 @@ const styles = (theme) => ({
     float: "right",
   },
   paper: {
-    display: "flex",
-    flexWrap: "wrap",
-    backgroundColor:"200 #81d4fa",
-    },
+    padding: 20
+  },
   image: {
     margin: "20px auto 20px auto",
   },

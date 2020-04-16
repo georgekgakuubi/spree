@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jwt-decode": "^2.2.1",
     "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "dayjs": "^1.8.23",
     "jwt-decode": "^2.2.0",
     "perfect-scrollbar": "^1.5.0",

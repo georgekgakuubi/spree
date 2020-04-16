@@ -23,6 +23,9 @@ const styles = (theme) => ({
   image: {
     margin: "20px auto 20px auto",
   },
+  paper: {
+    padding: 20
+  },
   profile: {
     "& .image-wrapper": {
       textAlign: "center",

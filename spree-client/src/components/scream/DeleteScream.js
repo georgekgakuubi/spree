@@ -18,7 +18,10 @@ const styles = {
     position: 'absolute',
     left: '91%',
     top: '0%'
-  }
+  },
+  typography: {
+    useNextVariants: true
+  },
 };
 
 class DeleteScream extends Component {

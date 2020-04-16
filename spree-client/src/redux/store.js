@@ -1,5 +1,5 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
-import thunk from 'redux-thunk';
+import thunk from 'redux-thunk'; //middleware
 
 import userReducer from './reducers/userReducer';
 import dataReducer from './reducers/dataReducer';

@@ -1,34 +1,49 @@
-import React, { Component } from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import PropTypes from 'prop-types';
-import AppIcon from '../images/icon.png';
-import { Link } from 'react-router-dom';
+import React, { Component } from "react";
+import withStyles from "@material-ui/core/styles/withStyles";
+import PropTypes from "prop-types";
+import AppIcon from "../images/icon.png";
+import { Link } from "react-router-dom";
 
 // MUI Stuff
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import CreateIcon from '@material-ui/icons/Create';
-import AddIcon from '@material-ui/icons/Add';
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
+import CreateIcon from "@material-ui/icons/Create";
+import AddIcon from "@material-ui/icons/Add";
 // Redux stuff
-import { connect } from 'react-redux';
-import { signupUser } from '../redux/actions/userActions';
+import { connect } from "react-redux";
+import { signupUser } from "../redux/actions/userActions";
 
 const styles = (theme) => ({
+  typography: {
+    useNextVariants: true
+  },
   form: {
-    textAlign: 'center'
+    textAlign: "center",
   },
   pageTitle: {
-    margin: '10px auto 10px auto'
+    margin: "10px auto 10px auto",
   },
   textField: {
-    margin: '10px auto 10px auto'
+    margin: "10px auto 10px auto",
   },
   button: {
     marginTop: 10,
-    position: 'relative'
+    position: "relative",
+  },
+  customError: {
+    color: "red",
+    fontSize: "0.8rem",
+    marginTop: 10,
+  },
+  progress: {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    marginTop: -12,
+    marginLeft: -12,
   },
 });
 
@@ -36,11 +51,11 @@ class signup extends Component {
   constructor() {
     super();
     this.state = {
-      email: '',
-      password: '',
-      confirmPassword: '',
-      handle: '',
-      errors: {}
+      email: "",
+      password: "",
+      confirmPassword: "",
+      handle: "",
+      errors: {},
     };
   }
   componentWillReceiveProps(nextProps) {
@@ -51,25 +66,25 @@ class signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({
-      loading: true
+      loading: true,
     });
     const newUserData = {
       email: this.state.email,
       password: this.state.password,
       confirmPassword: this.state.confirmPassword,
-      handle: this.state.handle
+      handle: this.state.handle,
     };
     this.props.signupUser(newUserData, this.props.history);
   };
   handleChange = (event) => {
     this.setState({
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value,
     });
   };
   render() {
     const {
       classes,
-      UI: { loading }
+      UI: { loading },
     } = this.props;
     const { errors } = this.state;
 
@@ -136,8 +151,12 @@ class signup extends Component {
               fullWidth
             />
             {errors.general && (
-              <Typography variant="body2" className={classes.customError} color="secondary">
-                {errors.general} 
+              <Typography
+                variant="body2"
+                className={classes.customError}
+                color="secondary"
+              >
+                {errors.general}
               </Typography>
             )}
             <Button
@@ -147,14 +166,17 @@ class signup extends Component {
               className={classes.button}
               disabled={loading}
             >
-              < CreateIcon></CreateIcon>
+              <CreateIcon></CreateIcon>
               {loading && (
                 <CircularProgress size={30} className={classes.progress} />
               )}
             </Button>
             <br />
             <small>
-              Already have an account ?<Link to="/login"><AddIcon></AddIcon></Link>
+              Already have an account ?
+              <Link to="/login">
+                <AddIcon></AddIcon>
+              </Link>
             </small>
           </form>
         </Grid>
@@ -168,15 +190,14 @@ signup.propTypes = {
   classes: PropTypes.object.isRequired,
   user: PropTypes.object.isRequired,
   UI: PropTypes.object.isRequired,
-  signupUser: PropTypes.func.isRequired
+  signupUser: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   user: state.user,
-  UI: state.UI
+  UI: state.UI,
 });
 
-export default connect(
-  mapStateToProps,
-  { signupUser }
-)(withStyles(styles)(signup));
+export default connect(mapStateToProps, { signupUser })(
+  withStyles(styles)(signup)
+);
