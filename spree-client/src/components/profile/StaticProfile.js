@@ -120,15 +120,15 @@ const StaticProfile = (props) => {
               <MyButton tip="DM">
                 <QuestionAnswerOutlinedIcon
                   color="secondary"
-                  style={{ fontSize: "25" }}
+                  style={{ fontSize: "30" }}
                 />
               </MyButton>
             </Link>
           </Fragment>
           <Fragment>
             <Link to="/">
-              <MyButton tip="DM">
-                <DirectionsIcon color="inherit" style={{ fontSize: "25" }} />
+              <MyButton tip="Back">
+                <DirectionsIcon color="inherit" style={{ fontSize: "30" }} />
               </MyButton>
             </Link>
           </Fragment>
