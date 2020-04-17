@@ -24,8 +24,8 @@ class Navbar extends Component {
         <Toolbar className="nav-container">
           {authenticated ? (
             <Fragment>
-              <MyButton tip="Refresh">
-                <RefreshIcon color ="secondary"
+              <MyButton tip="Refresh" >
+                <RefreshIcon color ="inherit"
                   onClick={() => window.location.reload(false)}
                   style={{ fontSize: "30" }}
                 ></RefreshIcon>

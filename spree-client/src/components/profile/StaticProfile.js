@@ -4,14 +4,17 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
+import MyButton from "../../util/MyButton";
 // MUI
 import MuiLink from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 // Icons
-import LocationOn from "@material-ui/icons/LocationOn";
+import MyLocationIcon from "@material-ui/icons/MyLocation";
 import LinkIcon from "@material-ui/icons/Link";
 import TodayIcon from "@material-ui/icons/Today";
+import DirectionsIcon from "@material-ui/icons/Directions";
+import QuestionAnswerOutlinedIcon from "@material-ui/icons/QuestionAnswerOutlined";
 
 const styles = (theme) => ({
   button: {
@@ -21,7 +24,7 @@ const styles = (theme) => ({
     margin: "20px auto 20px auto",
   },
   paper: {
-    padding: 20
+    padding: 20,
   },
   profile: {
     margin: "20px auto 20px auto",
@@ -95,7 +98,7 @@ const StaticProfile = (props) => {
           <hr />
           {location && (
             <Fragment>
-              <LocationOn color="primary" /> <span>{location}</span>
+              <MyLocationIcon color="primary" /> <span>{location}</span>
               <hr />
             </Fragment>
           )}
@@ -111,6 +114,24 @@ const StaticProfile = (props) => {
           )}
           <TodayIcon color="primary" />{" "}
           <span> 👉 {dayjs(createdAt).format("DD MMM YYYY")}</span>
+          <br></br>
+          <Fragment>
+            <Link to="/">
+              <MyButton tip="DM">
+                <QuestionAnswerOutlinedIcon
+                  color="secondary"
+                  style={{ fontSize: "25" }}
+                />
+              </MyButton>
+            </Link>
+          </Fragment>
+          <Fragment>
+            <Link to="/">
+              <MyButton tip="DM">
+                <DirectionsIcon color="inherit" style={{ fontSize: "25" }} />
+              </MyButton>
+            </Link>
+          </Fragment>
         </div>
       </div>
     </Paper>

@@ -119,7 +119,7 @@ class Profile extends Component {
                 onClick={this.handleEditPicture}
                 btnClassName="button"
               >
-                <AddAPhotoIcon color="primary" />
+                <AddAPhotoIcon color="secondary" />
               </MyButton>
             </div>
             <hr />
