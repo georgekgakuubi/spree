@@ -107,8 +107,8 @@ class Scream extends Component {
             openDialog={this.props.openDialog}
           />
         </CardContent>
-        </Card>        
-    );
+      </Card>  
+       );
   }
 }
 
