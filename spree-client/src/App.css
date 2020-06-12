@@ -4,7 +4,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background-color: 200 #80cbc4;
-  background:  url(https://media.tenor.com/images/6173ab94b75694c53050c51b7079113c/tenor.gif) no-repeat center center fixed; 
+  background:  url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQjXJ7cfcmrMN-x6KaSrg2oT7bNnGXl0LABJ2IZfozbYHlbl2y7&usqp=CAU)  no-repeat center fixed; 
   background-size: cover;
   line-height: 1.4;
   position: absolute;
@@ -87,6 +87,9 @@ a {
 .image:hover {
   animation: animate-image 0.5s;
   animation-iteration-count: infinite;
+}
+.bar{
+  position: bottom;
 }
 
 @keyframes animate-image {
