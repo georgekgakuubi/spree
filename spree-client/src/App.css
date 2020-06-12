@@ -4,6 +4,9 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background-color: 200 #80cbc4;
+  background:  url(https://media.tenor.com/images/6173ab94b75694c53050c51b7079113c/tenor.gif) no-repeat center center fixed; 
+  background-size: cover;
+  line-height: 1.4;
   position: absolute;
   display: auto;
   flex-direction: row;
@@ -45,8 +48,7 @@ body {
 }
 .nav-container {
   margin: auto;
-  position: sticky;
-  position: sticky;
+  position: absolute;
   top: 0;
 }
 .nav-container svg {

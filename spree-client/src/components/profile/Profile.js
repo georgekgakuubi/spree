@@ -104,7 +104,7 @@ class Profile extends Component {
     } = this.props;
     let profileMarkup = !loading ? (
       authenticated ? (
-        <Paper className={classes.paper} elevation={3}>
+        <Paper square className={classes.paper} elevation={3}>
           <div className={classes.profile}>
             <div className="image-wrapper">
               <img src={imageUrl} alt="profile" className="profile-image" />
