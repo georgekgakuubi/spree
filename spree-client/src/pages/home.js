@@ -9,6 +9,8 @@ import ScreamSkeleton from "../util/ScreamSkeleton";
 import { connect } from "react-redux";
 import { getScreams } from "../redux/actions/dataActions";
 
+import BottomNavBar from "../components/layout/BottomNavBar";
+
 class home extends Component {
   componentDidMount() {
     this.props.getScreams();
@@ -28,6 +30,7 @@ class home extends Component {
         <Grid item sm={8} xs={12} spacing={2}>
           {recentScreamsMarkup}
         </Grid>
+        <BottomNavBar position="fixed"/>
       </Grid>
     );
   }

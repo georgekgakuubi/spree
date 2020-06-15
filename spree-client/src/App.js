@@ -5,6 +5,7 @@ import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import jwtDecode from "jwt-decode";
 import NetworkDetector from './Hoc/NetworkDetector';
+
 // Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
@@ -14,6 +15,7 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 import Navbar from "./components/layout/Navbar";
 import themeObject from "./util/theme";
 import AuthRoute from "./util/AuthRoute";
+//import BottomNavBar from "./components/layout/BottomNavBar";
 // Pages
 import home from "./pages/home";
 import login from "./pages/login";
@@ -46,7 +48,7 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Provider store={store}>
           <Router>
-            <Navbar className="bar"/>
+            <Navbar/>
             <div className="container">
               <Switch>
                 <Route exact path="/" component={home} />
@@ -61,6 +63,7 @@ class App extends Component {
               </Switch>
             </div>
           </Router>
+ 
         </Provider>
       </MuiThemeProvider>
     );

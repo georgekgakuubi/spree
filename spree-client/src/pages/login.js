@@ -99,7 +99,6 @@ class login extends Component {
               color="var(--mainBlack)"
               background="rgba(0, 0, 0, 0.5)"
               variant="outlined"
-              color="secondary"
               className={classes.textField}
               helperText={errors.email}
               error={errors.email ? true : false}

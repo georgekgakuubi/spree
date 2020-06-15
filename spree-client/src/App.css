@@ -27,6 +27,10 @@ body {
     float: none;
     width: 100%;
   }
+  .root {
+    float: none;
+    width: 100%;  
+  }
 }
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 600px) {
@@ -39,6 +43,10 @@ body {
   .topnav a {
     float: none;
     width: 100%;
+  }
+  .root {
+    float: none;
+    width: 100%;  
   }
 }
 
@@ -62,6 +70,24 @@ a {
 .hide {
   display: none;
 }
+
+.root {
+    width: 100%;
+    color: #81d4fa;
+    text-decoration: none;
+    background-color: 200 #80cbc4;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    max-width: auto;
+    display: none;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+
 #error-symbol {
   font-size: 50px;
   border: 1px solid;
@@ -89,7 +115,7 @@ a {
   animation-iteration-count: infinite;
 }
 .bar{
-  position: bottom;
+  position: top;
 }
 
 @keyframes animate-image {
