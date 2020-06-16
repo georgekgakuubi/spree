@@ -9,7 +9,8 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import PostAddIcon from "@material-ui/icons/PostAdd";
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
 import CancelIcon from "@material-ui/icons/Cancel";
 import ContactlessIcon from '@material-ui/icons/Contactless';
 import LinkedCameraIcon from '@material-ui/icons/LinkedCamera';
@@ -43,6 +44,14 @@ const styles = (theme) => ({
     position: "absolute",
     left: "91%",
     top: "6%",
+  },
+  fabButton: {
+    position: 'absolute',
+    zIndex: 1,
+    top: -30,
+    left: 0,
+    right: 0,
+    margin: '0 auto',
   },
 });
 
@@ -85,7 +94,9 @@ class PostScream extends Component {
     return (
       <Fragment>
         <MyButton onClick={this.handleOpen} tip="Post a Scream!">
-          <PostAddIcon style={{ fontSize: "35" }} />
+        <Fab color="secondary" aria-label="add" className={classes.fabButton}>
+            <AddIcon />
+          </Fab>
         </MyButton>
         <Dialog
           open={this.state.open}

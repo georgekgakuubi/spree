@@ -44,10 +44,7 @@ body {
     float: none;
     width: 100%;
   }
-  .root {
-    float: none;
-    width: 100%;  
-  }
+  
 }
 
 .container {
@@ -71,22 +68,19 @@ a {
   display: none;
 }
 
-.root {
-    width: 100%;
-    color: #81d4fa;
-    text-decoration: none;
-    background-color: 200 #80cbc4;
-    margin: auto;
-    position: absolute;
-    top: 0;
-    max-width: auto;
-    display: none;
-    padding: 0;
-    margin: 0;
-    scroll-behavior: smooth;
-    padding: 0;
-    margin: 0;
+.appBar {
+  text-decoration: none;
+  background-color: 200 #80cbc4;
+  width: auto;
+  display: none;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  padding: 0;
+  margin: 0;
+
 }
+
 
 #error-symbol {
   font-size: 50px;
