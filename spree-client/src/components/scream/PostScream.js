@@ -49,8 +49,8 @@ const styles = (theme) => ({
     position: 'absolute',
     zIndex: 1,
     top: -30,
-    left: 0,
-    right: 0,
+    left: '0 auto',
+    right: '0 auto',
     margin: '0 auto',
   },
 });
@@ -95,7 +95,7 @@ class PostScream extends Component {
       <Fragment>
         <MyButton onClick={this.handleOpen} tip="Post a Scream!">
         <Fab color="secondary" aria-label="add" className={classes.fabButton}>
-            <AddIcon />
+            <AddIcon className="fa-beat" />
           </Fab>
         </MyButton>
         <Dialog

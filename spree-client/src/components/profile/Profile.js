@@ -159,7 +159,7 @@ class Profile extends Component {
               tip="Logout"
               onClick={this.handleLogout}
             >
-              <MeetingRoomIcon color="secondary" size="40" />
+              <MeetingRoomIcon color="secondary" style={{ fontSize: "38" }} className="fa-beat"/>
             </MyButton>
             <EditDetails />
           </div>

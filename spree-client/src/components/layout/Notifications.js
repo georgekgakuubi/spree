@@ -50,12 +50,12 @@ class Notifications extends Component {
               }
               color="secondary"
             >
-              <NotificationsIcon />
+              <NotificationsIcon style={{ fontSize: "40" }} className="fa-beat"/>
             </Badge>
           ))
-        : (notificationsIcon = <NotificationsIcon />);
+        : (notificationsIcon = <NotificationsIcon style={{ fontSize: "40" }} className="fa-beat"/>);
     } else {
-      notificationsIcon = <NotificationsIcon />;
+      notificationsIcon = <NotificationsIcon style={{ fontSize: "40" }} className="fa-beat"/>;
     }
     let notificationsMarkup =
       notifications && notifications.length > 0 ? (

@@ -13,7 +13,7 @@ import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 // Icons
-import InfoIcon from '@material-ui/icons/Info';
+import BuildIcon from '@material-ui/icons/Build';
 
 const styles = (theme) => ({
   theme,
@@ -120,7 +120,7 @@ class EditDetails extends Component {
           onClick={this.handleOpen}
           btnClassName={classes.button}
         >
-          <InfoIcon color="secondary" />
+          <BuildIcon color="secondary"  style={{ fontSize: "32" }} className="fa-spin"/>
         </MyButton>
         <Dialog
           open={this.state.open}

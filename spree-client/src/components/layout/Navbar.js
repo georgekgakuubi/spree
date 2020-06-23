@@ -31,14 +31,16 @@ class Navbar extends Component {
               <MyButton tip="Refresh" >
                 <RefreshIcon color ="inherit"
                   onClick={() => window.location.reload(false)}
-                  style={{ fontSize: "30" }}
-                ></RefreshIcon>
+                  style={{ fontSize: "36" }}
+                  rotate={true}
+                  className="fa-spin" 
+                ></RefreshIcon>                
               </MyButton>
              {/* <PostScream /> */}
 
               <Link to="/">
                 <MyButton tip="Home">
-                  <HouseIcon style={{ fontSize: "45" }} />
+                  <HouseIcon style={{ fontSize: "45" }} className="shake" />
                 </MyButton>
               </Link>
               <MyButton tip="Post an Image">
