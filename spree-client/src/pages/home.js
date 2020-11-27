@@ -27,10 +27,12 @@ class home extends Component {
         <Grid item sm={4} xs={12} spacing={2}>
           <Profile />
         </Grid>
+
         <Grid item sm={8} xs={12} spacing={2}>
           {recentScreamsMarkup}
         </Grid>
-        <BottomNavBar position="fixed"/>
+
+        <BottomNavBar position="fixed" />
       </Grid>
     );
   }

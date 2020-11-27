@@ -27,12 +27,14 @@ const styles = (theme) => ({
   },
   paper: {
     padding: 20,
+    position: "sticky",
   },
   image: {
     margin: "20px auto 20px auto",
   },
   profile: {
     position: "sticky",
+    top:"0",
     borderRadius: "30px",
     padding: "auto",
     margin: "auto",
@@ -48,7 +50,7 @@ const styles = (theme) => ({
     "& .profile-image": {
       width: 200,
       height: 200,
-      objectFit: "cover",
+      objectFit: "contain",
       maxWidth: "100%",
       borderRadius: "50%",
     },

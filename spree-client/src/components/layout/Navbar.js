@@ -6,7 +6,7 @@ import MyButton from "../../util/MyButton";
 // import PostScream from "../scream/PostScream";
 import Notifications from "./Notifications";
 
-
+//import ImageUpload from "../scream/ImageUpload";
 // MUI stuff
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -40,11 +40,13 @@ class Navbar extends Component {
 
               <Link to="/">
                 <MyButton tip="Home">
-                  <HouseIcon style={{ fontSize: "45" }} className="shake" />
+                  <HouseIcon style={{ fontSize: "45",color: green[500] }} className="shake" />
                 </MyButton>
               </Link>
               <MyButton tip="Post an Image">
-                <CloudUploadIcon style={{ fontSize: "45" }}></CloudUploadIcon>
+                <CloudUploadIcon style={{ fontSize: "45" }}>
+                  
+                </CloudUploadIcon>
               </MyButton>
 
               <Notifications />
